@@ -7,13 +7,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class VideoService {
 
-    private VideoRepository videoRepository;
+    private final VideoRepository videoRepository;
 
     public VideoService(VideoRepository videoRepository) {
         this.videoRepository = videoRepository;
     }
 
-    public Video createVideo(Video video) {
+    public Video saveVideo(Video video) {
+        return videoRepository.save(video);
+    }
+
+    public Video updateVideo(Video video) {
+        Video videoToUpdate = getVideoById(video.getVideoId());
+        videoToUpdate.setVideoName(video.getVideoName());
+        videoToUpdate.setVideoUrl(video.getVideoUrl());
         return videoRepository.save(video);
     }
 
@@ -23,10 +30,6 @@ public class VideoService {
 
     public Iterable<Video> getAllVideos() {
         return videoRepository.findAll();
-    }
-
-    public Video updateVideo(Video video) {
-        return videoRepository.save(video);
     }
 
     public void deleteVideo(String videoId) {
