@@ -22,8 +22,8 @@ public class VideoController {
                 .collect(java.util.stream.Collectors.toList());
     }
 
-    @PutMapping("/videos/{videoId}")
-    public Video putVideo(@PathVariable("videoId") String videoId, @RequestBody Video video) {
+    @PutMapping("/videos")
+    public Video putVideo(@RequestBody Video video) {
        return videoService.updateVideo(video);
     }
 
