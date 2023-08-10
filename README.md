@@ -1,5 +1,19 @@
 # Spring Boot DynamoDB Example
 
+Example Spring Boot REST API that uses `spring-data-dynamodb` library.  
+
+Spring Data DynamoDB is a library that provides easy access to Amazon DynamoDB from Spring applications. It provides a familiar and consistent programming model for data access, while still retaining the special traits of the underlying data store.
+Some of the benefits of using Spring Data DynamoDB include:
+- Easy integration with Spring applications
+- Support for CRUD operations
+- Support for projections
+- Support for custom repository code
+- REST support via spring-data-rest
+
+## JDK Version
+Use JDK 11 / Coretto 11<BR/>
+17+ is not supported by AWS App Runner
+
 ## AWS Credentials setup
 Set up your AWS credentials in `~/.aws/credentials`
 
