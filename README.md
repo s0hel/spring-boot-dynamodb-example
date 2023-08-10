@@ -48,5 +48,6 @@ When setting AWS App Runner, Specify
 - Start command: `java -jar target/spring-boot-dynamodb-example-0.0.1-SNAPSHOT.jar`
 
 ### Service Configuration:
+- Define and set Environment Variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
 - Health Check Protocol: `HTTP`
 - Health Check Path: `/actuator/health`
