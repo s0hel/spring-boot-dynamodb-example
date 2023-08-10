@@ -41,13 +41,20 @@ Navigate to Swagger URL: http://localhost:8080/swagger-ui.html
 ## AWS App Runner setup
 When setting AWS App Runner, Specify
 
+### Create IAM Instance Role
+- Follow these <a href="https://catalog.us-east-1.prod.workshops.aws/event/dashboard/en-US/workshop/module1/create-iam-instance-role">instructions</a> 
+- Be sure to add the following permission: `AmazonDynamoDBFullAccess`
+- Name it `AppRunner_InstanceRole`
+
 ### Build Configuration:
 - Runtime: `Coretta 11`
 - Port: `8080`
 - Build command: `mvn clean package -DskipTests`
 - Start command: `java -jar target/spring-boot-dynamodb-example-0.0.1-SNAPSHOT.jar`
 
+### Security Configuration
+- Instance Role: `AppRunner_InstanceRole`
+
 ### Service Configuration:
-- Define and set Environment Variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
 - Health Check Protocol: `HTTP`
 - Health Check Path: `/actuator/health`
